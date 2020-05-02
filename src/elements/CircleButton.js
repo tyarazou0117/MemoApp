@@ -3,8 +3,9 @@ import { StyleSheet, Text, View } from 'react-native';
 
 class CircleButton extends React.Component{
     render(){
+      const { style }= this.props;
       return(
-        <View style={styles.circleButton}>
+        <View style={[styles.circleButton,style]}>
             <Text style={styles.circleButtonTitle}>
                 {this.props.children}
             </Text>
@@ -14,7 +15,7 @@ class CircleButton extends React.Component{
 }
 
 const styles = StyleSheet.create({
-  circleBotton:{
+  circleButton:{
     position:'absolute',
     bottom:32,
     right:32,
@@ -25,7 +26,7 @@ const styles = StyleSheet.create({
     justifyContent:'center',
     alignItems:'center',
   },
-    circleBottonTitle:{
+    circleButtonTitle:{
     fontSize:24,
     lineHeight:24,
     color:'#fff',
